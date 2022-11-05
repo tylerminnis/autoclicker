@@ -4,11 +4,11 @@ from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
 
 #controls
-delay = 0.0001
-button = Button.left
-start_stop_key = KeyCode(char = 'a')
-stop_key = KeyCode(char = 'c')
 
+delay = 0.0001 #changes how fast it clicks (lower = faster)
+button = Button.left #changes which mouse button it is clicking (left, middle right)
+start_stop_key = KeyCode(char = 'a') #changes what key starts and stops the program
+stop_key = KeyCode(char = 'c') #changes what key exits the program
 class ClickMouse(threading.Thread):
 
     def __init__(self, delay, button):
@@ -18,11 +18,9 @@ class ClickMouse(threading.Thread):
         self.running = False
         self.program_running = True
 
-    #doesn't work for some reason
     def start_clicking(self):
         self.running = True
 
-    #doesn't work for some reason
     def stop_clicking(self):
         self.running = False
 
